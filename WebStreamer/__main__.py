@@ -42,7 +42,7 @@ async def start_services():
     print('------------------- Initalizing Web Server -------------------')
     app = web.AppRunner(await web_server())
     await app.setup()
-    bind_address = "0.0.0.0" if Var.ON_HEROKU else Var.FQDN
+    bind_address = "0.0.0.0" if Var.ON_HEROKU else Var.BIND_ADRESS
     await web.TCPSite(app, bind_address, Var.PORT).start()
     print('\n')
     print('----------------------- Service Started -----------------------')
@@ -52,7 +52,7 @@ async def start_services():
         print('                        app runnng on =>> {}'.format(Var.FQDN))
     if Var.ON_HEROKU:
         print('------------------ Starting Keep Alive Service ------------------')
-        print('\n')
+        print('BOT STARTED.......')
         await asyncio.create_task(ping_server())
     print('---------------------------------------------------------------')
     await idle()
