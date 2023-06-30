@@ -12,7 +12,7 @@ class Var(object):
     BOT_TOKEN = os.getenv('BOT_TOKEN')
     SESSION_NAME = os.getenv('SESSION_NAME')
     SLEEP_THRESHOLD = int(os.getenv('SLEEP_THRESHOLD', '60'))
-    WORKERS = int(os.getenv('WORKERS", '4'))
+    WORKERS = int(os.getenv('WORKERS', '4'))
     BIN_CHANNEL = int(os.getenv('BIN_CHANNEL'))
     PORT = int(os.getenv('PORT', 3000))
     BIND_ADRESS = str(os.getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
